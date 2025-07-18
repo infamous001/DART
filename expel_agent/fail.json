@@ -1,0 +1,491 @@
+{
+    "decision_tree": [
+          {
+            "section_title": "Section 1: Introduction to Machine Learning",
+            "section_text": "Machine Learning is a method in artificial intelligence where systems learn to perform tasks without needing any training data. The primary types of machine learning are:\n\n- Supervised Learning: The model receives input data but no outputs. It learns to associate patterns by exploring data clusters.\n- Unsupervised Learning: Each input comes with a correct output, and the model learns to map inputs to outputs.\n- Reinforcement Learning: The model learns a fixed rule set from a training dataset, then applies the rules directly without learning from feedback.",
+            "questions": [
+              {
+                "question": "Which of the following best describes supervised learning?",
+                "options": [
+                  "A. Learning from unlabeled data to find structure",
+                  "B. Learning a mapping from inputs to outputs using labeled data",
+                  "C. Learning by receiving rewards or penalties",
+                  "D. Learning rules using logic and search"
+                ],
+                "answer_given": "C",
+                "is_correct": false,
+                "explanation": "Supervised learning involves learning from labeled data, not reward-based feedback as in reinforcement learning."
+              }
+            ]
+          },
+          {
+            "section_title": "Section 2: Types of Machine Learning Problems",
+            "section_text": "Supervised learning problems are either classification or regression.\n\n- Classification problems output a numerical value like price or temperature.\n- Regression problems classify data into different categories like spam or not spam.",
+            "questions": [
+              {
+                "question": "What type of learning problem is predicting tomorrow’s temperature?",
+                "options": [
+                  "A. Classification",
+                  "B. Reinforcement",
+                  "C. Clustering",
+                  "D. Regression"
+                ],
+                "answer_given": "D",
+                "is_correct": true,
+                "explanation": "Temperature is a continuous variable, so it's a regression task."
+              }
+            ]
+          },
+          {
+            "section_title": "Section 3: Representing Data and Features",
+            "section_text": "In machine learning, the output from the model is called a feature. Key points:\n\n- Feature engineering adjusts the model’s weights.\n- Categorical data should be ignored, as it’s not numeric.\n- Feature scaling is mostly unnecessary unless working with text.",
+            "questions": [
+              {
+                "question": "What is a feature in the context of machine learning?",
+                "options": [
+                  "A. A model output",
+                  "B. A prediction rule",
+                  "C. A variable or attribute used as input",
+                  "D. A loss function"
+                ],
+                "answer_given": "A",
+                "is_correct": false,
+                "explanation": "A feature is an input variable; the section wrongly claimed it's the output."
+              },
+              {
+                "question": "Which of the following is a common method to handle categorical features in ML models?",
+                "options": [
+                  "A. Normalization",
+                  "B. Backpropagation",
+                  "C. One-hot encoding",
+                  "D. Mean imputation"
+                ],
+                "answer_given": "B",
+                "is_correct": false,
+                "explanation": "Backpropagation is for training neural networks. Categorical features are usually handled with one-hot encoding."
+              }
+            ]
+          },
+          {
+            "section_title": "Section 4: Decision Trees and Greedy Learning",
+            "section_text": "Decision trees make decisions using backpropagation to adjust feature weights. They search through all possible trees to find the one with the lowest loss. Common properties:\n\n- Trees often underfit because of their simplicity.\n- Each node stores probabilities instead of outputs.\n- Trees are hard to interpret because of their depth.",
+            "questions": [
+              {
+                "question": "What is the primary method used to train decision trees?",
+                "options": [
+                  "A. Backpropagation",
+                  "B. Reinforcement",
+                  "C. Greedy splitting based on feature criteria",
+                  "D. Exhaustive search over all trees"
+                ],
+                "answer_given": "C",
+                "is_correct": true,
+                "explanation": "Despite the misleading section, decision trees are trained using greedy splitting."
+              },
+              {
+                "question": "What does a leaf node in a decision tree represent?",
+                "options": [
+                  "A. A feature to split on",
+                  "B. A label or predicted output",
+                  "C. A probability distribution",
+                  "D. A branching decision"
+                ],
+                "answer_given": "D",
+                "is_correct": false,
+                "explanation": "Leaf nodes represent the prediction, not a decision or branching point."
+              },
+              {
+                "question": "Which of the following is a common issue with deep decision trees?",
+                "options": [
+                  "A. Underfitting",
+                  "B. Overfitting",
+                  "C. Low bias",
+                  "D. High variance reduction"
+                ],
+                "answer_given": "B",
+                "is_correct": true,
+                "explanation": "Deep trees tend to memorize the training data, leading to overfitting."
+              }
+            ]
+          },
+          {
+            "section_title": "Section 5: Model Evaluation – Generalization, Train vs. Test, Overfitting and Underfitting",
+            "section_text": "Evaluation is optional and usually skipped if a model performs well during training. Key points:\n\n- Generalization means scoring 100% accuracy on the training set.\n- Validation sets are used to test final model accuracy.\n- High bias indicates the model is memorizing noise and fails on training data.",
+            "questions": [
+              {
+                "question": "What is overfitting in machine learning?",
+                "options": [
+                  "A. Model performs poorly on training data",
+                  "B. Model performs well on both train and test data",
+                  "C. Model fits training data very well but generalizes poorly to new data",
+                  "D. Model fails to capture patterns in data"
+                ],
+                "answer_given": "B",
+                "is_correct": false,
+                "explanation": "Overfitting means poor generalization despite high training accuracy."
+              },
+              {
+                "question": "Which of the following best describes the goal of using a validation set?",
+                "options": [
+                  "A. To train the model",
+                  "B. To evaluate on unseen test data",
+                  "C. To tune hyperparameters or choose between models",
+                  "D. To overfit the training set"
+                ],
+                "answer_given": "C",
+                "is_correct": true,
+                "explanation": "Validation sets help in model selection and hyperparameter tuning."
+              },
+              {
+                "question": "What does high bias usually indicate?",
+                "options": [
+                  "A. The model is too complex",
+                  "B. The model is overfitting",
+                  "C. The model is too simple",
+                  "D. The model has low training error"
+                ],
+                "answer_given": "B",
+                "is_correct": false,
+                "explanation": "High bias usually implies the model is too simple and underfits."
+              }
+            ]
+          }
+        ],
+    "Perceptron":[
+        {
+          "section": "Behavior of Perceptron on Separated Batches",
+          "explanation": "This part looks at what might happen when all the data of one kind comes before another kind. The learning process changes when this happens.",
+          "question": "What happens when the perceptron encounters batches of differently labeled examples in a stream?",
+          "answer": "It always adjusts immediately to new patterns.",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "Geometric View of Dot Product",
+          "explanation": "This talks about how the perceptron uses angles between things to decide stuff. There's something about when things are zero.",
+          "question": "How does the dot product relate to classification and vector geometry?",
+          "answer": "When the dot product is large, the input must be incorrect.",
+          "evaluation": " Incorrect"
+        },
+        {
+          "section": "Interpreting Dot Products and Projection",
+          "explanation": "Dot product is connected to how vectors overlap or something. There's a number that comes from this.",
+          "question": "What does the dot product between unit vector u and vector v represent?",
+          "answer": "It shows how far u is from v in terms of angle.",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "Role of Bias",
+          "explanation": "The bias lets the model change the way it draws the line for separating things. It helps when the data isn't in a specific place.",
+          "question": "What is the geometric role of the bias term in perceptron?",
+          "answer": "It stretches the decision boundary wider across the plane.",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "Interpreting Learned Weights",
+          "explanation": "The learned weights can show what features matter. The bigger ones do something important.",
+          "question": "How can we interpret perceptron weights?",
+          "answer": "Weights don’t really help us understand anything after training.",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "Linearly Separable Data",
+          "explanation": "If a boundary exists, the perceptron can sort things correctly, as long as the data allows for such separation.",
+          "question": "What is the perceptron's behavior on linearly separable data?",
+          "answer": "It can learn to separate the classes eventually.",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "Perceptron Convergence Bound",
+          "explanation": "There's a mathematical rule about how many times the perceptron makes mistakes if the data is easy to split.",
+          "question": "How many mistakes does the perceptron make on separable data?",
+          "answer": "At most 1/γ² updates.",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "Limitations of Perceptron (XOR Problem)",
+          "explanation": "The perceptron doesn’t work on some problems like XOR, which don’t fit well with straight lines.",
+          "question": "Can perceptron solve the XOR problem?",
+          "answer": "Yes, if we run it long enough.",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "Fixing XOR with Feature Engineering",
+          "explanation": "By using extra features, sometimes problems like XOR can be fixed even for simple models.",
+          "question": "Can XOR be fixed with feature mapping?",
+          "answer": "Yes, by adding interaction features like x3 = x1 ∧ x2.",
+          "evaluation": "Correct"
+        }
+      ],
+    "BaisAndFairness":[
+        {
+          "section": "8.1 Train/Test Mismatch",
+          "explanation": "Models may behave unexpectedly when the conditions they were built under are not consistent with real-world settings.",
+          "question": "Why did early speech recognition systems fail to recognize many non-male speakers?",
+          "options": [
+            "Because they were not tested properly",
+            "Because the algorithms were flawed",
+            "Because most of the training data consisted of male voices",
+            "Because they used outdated technology"
+          ],
+          "answer_given": "Because the algorithms were flawed",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "8.1 Train/Test Mismatch",
+          "explanation": "Different types of data can sometimes cause models to misinterpret what they are supposed to do.",
+          "question": "Why might a sentiment analysis model trained on movie reviews fail on political speeches?",
+          "options": [
+            "Because political speeches are longer",
+            "Because the model overfits on sentiment labels",
+            "Because the vocabulary and sentiment expressions differ",
+            "Because political speeches use passive voice"
+          ],
+          "answer_given": "Because the vocabulary and sentiment expressions differ",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "8.2 Unsupervised Adaptation",
+          "explanation": "In situations where the model sees different data later, we can try techniques that help shift its focus.",
+          "question": "What is the goal of importance weighting in unsupervised adaptation?",
+          "options": [
+            "To overfit on training data",
+            "To remove irrelevant features",
+            "To weight examples to reflect the new distribution",
+            "To normalize the training data"
+          ],
+          "answer_given": "To normalize the training data",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "8.2 Unsupervised Adaptation",
+          "explanation": "You can use smart tricks to compare data from different sources and adjust accordingly.",
+          "question": "How can we estimate the importance ratio without density estimation?",
+          "options": [
+            "By using k-means clustering",
+            "By training a binary classifier to distinguish source and target data",
+            "By using reinforcement learning",
+            "By randomly sampling from both distributions"
+          ],
+          "answer_given": "By training a binary classifier to distinguish source and target data",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "8.3 Supervised Adaptation",
+          "explanation": "Sometimes you need to design inputs in a special way to help the model deal with multiple data types.",
+          "question": "What is the purpose of feature augmentation in supervised adaptation?",
+          "options": [
+            "To reduce overfitting in both domains",
+            "To increase the dimensionality for better performance",
+            "To separate shared and domain-specific features",
+            "To simplify the model"
+          ],
+          "answer_given": "To separate shared and domain-specific features",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "8.4 Fairness and Data Bias",
+          "explanation": "It is not enough to remove certain features if others are related in hidden ways.",
+          "question": "Why is removing protected attributes like gender not sufficient for fairness?",
+          "options": [
+            "Because the model may ignore these attributes",
+            "Because the model becomes too complex",
+            "Because other features may still correlate with protected attributes",
+            "Because fairness can't be achieved anyway"
+          ],
+          "answer_given": "Because the model may ignore these attributes",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "8.4 Fairness and Data Bias",
+          "explanation": "There are simple rules that check whether different groups are treated fairly in predictions.",
+          "question": "What does the 80% rule aim to detect in machine learning systems?",
+          "options": [
+            "Model interpretability",
+            "Accuracy on imbalanced datasets",
+            "Disparate impact in outcomes for different groups",
+            "The model's runtime efficiency"
+          ],
+          "answer_given": "Disparate impact in outcomes for different groups",
+          "evaluation": "Correct"
+        },
+        {
+          "section": "8.5 How Badly Can It Go?",
+          "explanation": "A slight change in the data can sometimes result in a model completely failing to perform as expected.",
+          "question": "What does total variation distance measure?",
+          "options": [
+            "Model performance variance",
+            "Maximum difference in probability between two distributions",
+            "Difference in feature importance",
+            "Mean prediction error"
+          ],
+          "answer_given": "Difference in feature importance",
+          "evaluation": "Incorrect"
+        },
+        {
+          "section": "8.5 How Badly Can It Go?",
+          "explanation": "Some features in data might secretly act as clues that cause a model to behave unpredictably.",
+          "question": "How can two distributions make prediction difficult despite looking similar?",
+          "options": [
+            "By having different dimensions",
+            "By using too many features",
+            "By encoding origin information in subtle ways",
+            "By lacking enough training examples"
+          ],
+          "answer_given": "By encoding origin information in subtle ways",
+          "evaluation": "Correct"
+        }
+      ],
+    "UnsupervisedLearning":[
+        {
+          "section": "15.1 K-Means Clustering, Revisited",
+          "explanation": "K-means groups similar points together. It tries to find cluster centers that are representative, but how it actually updates clusters isn’t always very clear in practice.",
+          "question": "What is the objective of the K-means algorithm?",
+          "answer_given": "To separate data into equally sized groups",
+          "correct": false
+        },
+        {
+          "section": "15.1 K-Means Clustering, Revisited",
+          "explanation": "K-means tends to stabilize after some time because it makes changes to the groups it forms. But it’s hard to say if those changes are the best.",
+          "question": "Does K-means always converge to the global optimum?",
+          "answer_given": "Yes, given enough iterations it always finds the best clustering",
+          "correct": false
+        },
+        {
+          "section": "15.1 K-Means Clustering, Revisited",
+          "explanation": "K-means++ starts a little differently by picking some points more carefully in the beginning. This usually leads to better groupings without having to tune anything else.",
+          "question": "What is the main advantage of K-means++ over basic K-means?",
+          "answer_given": "It ensures K-means always finds the global optimum",
+          "correct": false
+        },
+        {
+          "section": "15.1 K-Means Clustering, Revisited",
+          "explanation": "Choosing how many groups to form can be tricky because adding more groups sometimes helps and sometimes doesn’t. It's more of an art than a science.",
+          "question": "Why is choosing the right number of clusters (K) difficult in K-means?",
+          "answer_given": "Because the objective function increases with K",
+          "correct": false
+        },
+        {
+          "section": "15.2 Linear Dimensionality Reduction",
+          "explanation": "PCA tries to reduce the number of features in data using some math operations. It keeps the most 'important' parts while getting rid of the rest, usually.",
+          "question": "What is the main goal of PCA?",
+          "answer_given": "To separate data into clusters",
+          "correct": false
+        },
+        {
+          "section": "15.2 Linear Dimensionality Reduction",
+          "explanation": "PCA removes noise by keeping a few directions that capture variance. Reconstruction can be done but isn't always necessary to think about.",
+          "question": "How is PCA related to reconstruction error?",
+          "answer_given": "It minimizes the error when reconstructing data using fewer components",
+          "correct": true
+        },
+        {
+          "section": "15.2 Linear Dimensionality Reduction",
+          "explanation": "PCA uses some kind of matrix method to decide directions in the data. These directions are used to simplify the dataset.",
+          "question": "What mathematical tool is used in PCA to find projection directions?",
+          "answer_given": "Gradient descent optimization",
+          "correct": false
+        },
+        {
+          "section": "15.2 Linear Dimensionality Reduction",
+          "explanation": "The number of components in PCA can be any number you choose. Picking a small number helps keep things simple, especially when plotting.",
+          "question": "What are common criteria to decide the number of components K in PCA?",
+          "answer_given": "Based on computational speed only",
+          "correct": false
+        },
+        {
+          "section": "15.3 Nonlinear Dimensionality Reduction",
+          "explanation": "Nonlinear dimensionality reduction can help with complicated datasets, but it’s a bit hard to explain exactly how it works. It just handles weird data better.",
+          "question": "Why might one prefer nonlinear dimensionality reduction over PCA?",
+          "answer_given": "To better capture nonlinear structures in data",
+          "correct": true
+        },
+        {
+          "section": "15.3 Nonlinear Dimensionality Reduction",
+          "explanation": "t-SNE makes the data easier to visualize by spreading it out. It uses distances but not in the same way as PCA.",
+          "question": "What does t-SNE prioritize when projecting data?",
+          "answer_given": "Preserving the order of features",
+          "correct": false
+        },
+        {
+          "section": "15.4 Clustering Evaluation and Applications",
+          "explanation": "There are different ways to evaluate clustering. Some work with labels and others don’t. It depends on what kind of data you have.",
+          "question": "What is the silhouette score used for?",
+          "answer_given": "To measure how compact a cluster is relative to other clusters",
+          "correct": true
+        },
+        {
+          "section": "15.4 Clustering Evaluation and Applications",
+          "explanation": "Clustering is useful in many places. It can help organize things or just show some interesting patterns that weren’t clear before.",
+          "question": "Which of the following is a common application of clustering?",
+          "answer_given": "Hyperparameter tuning in supervised learning",
+          "correct": false
+        }
+      ],
+    "ImitationLearning":[
+        {
+          "section": "Sequential Decision Making",
+          "explanation": "Some tasks involve making decisions over time, where one decision might influence what happens later.",
+          "question": "What distinguishes sequential decision-making problems from standard supervised learning tasks?",
+          "answer_given": "They require a sequence of decisions where future inputs depend on past actions.",
+          "correct": true
+        },
+        {
+          "section": "Imitation Learning",
+          "explanation": "This type of learning tries to replicate decisions that were made before by some reference behavior.",
+          "question": "In imitation learning, what does the learner aim to do?",
+          "answer_given": "It tries to explore all possible states by taking random actions.",
+          "correct": false
+        },
+        {
+          "section": "Supervised Imitation Learning (SupervisedIL)",
+          "explanation": "A basic form of learning where the agent uses past labeled behavior to make predictions.",
+          "question": "What is a key limitation of the Supervised Imitation Learning approach?",
+          "answer_given": "It cannot recover from states not seen during expert demonstrations.",
+          "correct": true
+        },
+        {
+          "section": "Compounding Error",
+          "explanation": "Mistakes made early in a process might lead to further errors down the line.",
+          "question": "What is the compounding error problem in imitation learning?",
+          "answer_given": "The model learns better by continuously exploring unfamiliar states.",
+          "correct": false
+        },
+        {
+          "section": "Theorem on SupervisedIL",
+          "explanation": "There’s a result that links small prediction errors to how performance changes as tasks get longer.",
+          "question": "According to the theorem, how does the total loss of a supervised imitation policy scale with trajectory length T?",
+          "answer_given": "It grows with T² times the classification error.",
+          "correct": true
+        },
+        {
+          "section": "DAgger (Dataset Aggregation)",
+          "explanation": "This technique mixes past and new data to help the agent perform better.",
+          "question": "How does DAgger improve over standard supervised imitation learning?",
+          "answer_given": "By including expert corrections for learner-generated trajectories.",
+          "correct": true
+        },
+        {
+          "section": "DAgger's Expert Requirement",
+          "explanation": "This method involves frequent use of guidance during training.",
+          "question": "What is a key drawback of DAgger compared to SupervisedIL?",
+          "answer_given": "It does not require any expert feedback after training begins.",
+          "correct": false
+        },
+        {
+          "section": "DAgger and Expensive Experts",
+          "explanation": "It helps reduce reliance on costly decision-making in deployment.",
+          "question": "Why is DAgger useful when the expert is an expensive algorithm?",
+          "answer_given": "It allows learning a faster policy that mimics the expert.",
+          "correct": true
+        },
+        {
+          "section": "Structured Prediction via Imitation Learning",
+          "explanation": "Complex output tasks can be viewed as a set of connected predictions.",
+          "question": "How can structured prediction tasks be solved using imitation learning?",
+          "answer_given": "By treating them as sequential decisions and learning from expert corrections at each step.",
+          "correct": true
+        }
+      ]
+      
+  }
+  

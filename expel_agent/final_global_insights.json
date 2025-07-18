@@ -1,0 +1,14 @@
+{
+    "comparison_insights": {
+        "1": "Ensure explanations clearly connect the concept being taught to real-world examples or scenarios to enhance understanding and retention. (\u2191)",
+        "2": "Provide detailed explanations that address potential misconceptions and clarify why certain options are incorrect, not just why the correct option is right, using clear and precise language.",
+        "3": "Highlight the importance of understanding underlying assumptions and conditions that affect model performance, such as data distribution and feature correlation.",
+        "4": "Emphasize the need for students to understand both the technical and ethical implications of machine learning concepts, such as fairness and bias, to foster a holistic understanding. (\u2193)",
+        "5": "Encourage the use of precise language and definitions in explanations to prevent misunderstandings and ensure clarity in technical concepts."
+    },
+    "success_insights": {
+        "1": "Introduce complex concepts by relating them to familiar contexts or contrasting them with simpler, well-understood ideas to build a foundation for understanding.",
+        "2": "Structure explanations to highlight key distinctions or unique characteristics of the topic, enabling students to grasp what sets it apart from other concepts.",
+        "3":"Use examples that the student can resonate with in order to improve clarity."
+    }
+}
